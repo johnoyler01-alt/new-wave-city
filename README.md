@@ -7,7 +7,7 @@ A high-fidelity, retro-neon inspired landing page designed for **New Wave City**
 ---
 
 ## 🚀 Live Demo
-**Check out the live site here:** [PASTE_YOUR_NETLIFY_LINK_HERE]
+**Check out the live site here:** (https://john-oyler-new-wave-city.netlify.app)
 
 ---
 

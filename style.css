@@ -1,0 +1,464 @@
+/* --- Global Styles --- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  /* FINAL GRID FIX: Fixed attachment and subtle color/size */
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      #333333 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      #333333 40px
+    );
+  background-size: 40px 40px;
+  /* CRITICAL FIX: This requires the <body> tag to be properly structured */
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+  color: #00ffff;
+  letter-spacing: 2px;
+}
+
+a {
+  color: #ff00ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+  /* CRITICAL: Must be fixed to stay at the top */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* These ensure it covers the grid and is on top */
+  background-color: #000000;
+  z-index: 1000;
+  border-bottom: 2px solid #00ffff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2em; /* Increased size */
+  font-weight: 700;
+  text-decoration: none;
+  color: #ff00ff; /* Neon Magenta */
+  filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #ff00ff);
+  transition: color 0.3s;
+  letter-spacing: 2px;
+}
+
+.nav-logo:hover {
+  color: #ffffff;
+  filter: drop-shadow(0 0 10px #ff00ff) drop-shadow(0 0 20px #ff00ff);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  list-style: none;
+  margin: 0 10px; /* IMPORTANT: Ensures horizontal spacing between links */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 0;
+  transition: color 0.3s;
+  font-size: 1.1em;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+}
+
+.cta-button {
+  background-color: #ff00ff;
+  color: #000000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  filter: drop-shadow(0 0 5px #ff00ff);
+  margin-left: 20px;
+}
+
+.cta-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* --- Mobile Menu (Hidden on Desktop) --- */
+.menu-toggle {
+  display: none;
+}
+
+/* --- Hero Section --- */
+.hero {
+  padding-top: 160px;
+  height: 100vh;
+  /* REVISED MAX SEPARATION: Increased margin-bottom ( */
+  margin-bottom: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* DELETE THIS LINE: background-color: #000000; */
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  margin: auto;
+}
+
+/* --- ADD THE TRANSPARENCY FIX HERE --- */
+.hero,
+.hero-content {
+  background-color: transparent !important;
+}
+
+.hero-logo-img {
+  max-width: 550px;
+  height: auto;
+  /* REVISED: REMOVE border-radius: 50%; to keep the square shape */
+  border: 3px solid #00ffff;
+  /* The large glow is now centered on the square image */
+  box-shadow: 0 0 55px rgba(0, 255, 255, 0.9), 0 0 120px rgba(0, 255, 255, 0.4);
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.5em;
+  color: #00ffff;
+  filter: drop-shadow(0 0 5px #00ffff);
+  margin: 10px 0 30px 0;
+}
+
+/* --- Next Event Flyer Styling (CRITICAL FIX FOR SIZE) --- */
+.next-event-flyer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px auto 40px auto;
+  max-width: 450px; /* Limits the total width of the container for the two flyers */
+}
+
+.flyer-img {
+  width: 200px; /* Forces each image to a fixed small width */
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.4);
+  transition: transform 0.3s;
+}
+
+/* --- Content Sections --- */
+.content-section {
+  padding: 80px 5%;
+  max-width: 1000px;
+  margin: 0 auto 50px auto; /* Adds margin below sections */
+  border-bottom: 1px solid #ff00ff;
+}
+
+.content-section:last-of-type {
+  border-bottom: none;
+}
+
+.content-section h2 {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #00ffff;
+  display: inline-block;
+  filter: drop-shadow(0 0 5px #00ffff);
+}
+
+.content-section h3 {
+  font-size: 1.8em;
+  color: #ff00ff;
+  margin-top: 30px;
+}
+
+.content-section p {
+  font-size: 1.1em;
+  color: #cccccc;
+  margin-bottom: 20px;
+}
+
+/* --- Event Cards (Styling for JS-generated content) --- */
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.event-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border: 2px solid #00ffff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4);
+}
+
+.event-details {
+  display: flex;
+  align-items: center;
+}
+
+.event-date {
+  background-color: #ff00ff;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.event-date .month {
+  font-size: 1.2em;
+  display: block;
+}
+
+.event-date .day {
+  font-size: 2em;
+  display: block;
+  line-height: 1;
+}
+
+.event-title-info {
+  font-family: Arial, sans-serif;
+}
+
+.event-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.event-meta {
+  font-size: 0.9em;
+  color: #aaaaaa;
+}
+
+.event-tickets {
+  background-color: #00ffff;
+  color: #000000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.event-tickets:hover {
+  background-color: #ffffff;
+}
+
+/* --- Contact Section --- */
+.contact-grid {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.contact-form-container,
+.contact-info-container {
+  flex: 1;
+}
+
+.contact-form-container h3,
+.contact-info-container h3 {
+  font-size: 2em;
+  color: #00ffff;
+}
+
+.contact-info-container p {
+  color: #cccccc;
+  margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #0a0a0a;
+  border: 1px solid #ff00ff;
+  color: white;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #ff00ff;
+  color: #000000;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #ffffff;
+}
+
+.social-icons-contact {
+  margin-top: 20px;
+}
+
+.social-icons-contact a {
+  font-size: 2em;
+  margin-right: 20px;
+  color: #ff00ff;
+  transition: color 0.3s;
+}
+
+.social-icons-contact a:hover {
+  color: #00ffff;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background-color: #0a0a0a;
+  color: #aaaaaa;
+  padding: 20px 0;
+  font-size: 0.9em;
+  border-top: 1px solid #1a1a1a;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.social-links a {
+  font-size: 1.5em;
+  margin-left: 15px;
+  color: #aaaaaa;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff00ff;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .hero-logo-img {
+    max-width: 90%;
+  }
+
+  .tagline {
+    font-size: 1.2em;
+  }
+
+  .contact-grid {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .next-event-flyer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 90%;
+  }
+
+  .flyer-img {
+    width: 80%;
+  }
+
+  /* FORCED CACHE BUSTER */
+  #dummy-element-for-caching {
+    display: none;
+  }
+}
